@@ -5,10 +5,80 @@
   }
   
   
-  body {
-    background-color: #B99B6B;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+body {
+background-color: #B99B6B;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+color: var(--secondary-color);
+}
+
+  /* personalizar o título do projeto */
+.title {
+    background-color: #698269;
     color: var(--secondary-color);
-  }
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 90px;
+    margin-bottom: 15px;
+    width: 30%;
+    /* posição */
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    
+    /* personalizar "Cadastrar Livro" */
+    h2 {
+      background-color: #3A98B9;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 35px;
+      color: var(--secondary-color);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* personalizar "Listagem de Livros" */
+    .listagem {
+      background-color: #b475db;
+      text-align: center;
+      margin-top: 80px;
+      color: var(--secondary-color);
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      width: 20%;
+      position: relative;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    .form-container {
+      background-color: #A9907E;
+      border: 3px solid #7bf064;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      width: 400px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin: 0 auto;
+    }
+    
