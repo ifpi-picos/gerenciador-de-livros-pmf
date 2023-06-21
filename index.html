@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Livros</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="title"><strong>Gerenciador de Livros</strong></h1>
+    </div>
+
+    <div class="form-container">
+        <form id="book-form">
+            <h2>Cadastrar Livro</h2>
+            <label for="title">Título:</label>
+            <input type="text" id="title" required><br><br>
+
+            <label for="author">Autor:</label>
+            <input type="text" id="author" required><br><br>
+
+            <label for="publication-date">Publicação:</label>
+            <input type="date" id="publication-date" required><br><br>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <h2 class="listagem">Listagem de Livros</h2>
+    <p>Ordenar por:
+        <select id="sort-by">
+            <option value="title">Título</option>
+            <option value="publication-date">Data de Publicação</option>
+        </select>
+    </p>
+
+    <div id="book-list-container">
+    <table id="book-list">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Data de Publicação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="book-list-body"></tbody>
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
