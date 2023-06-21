@@ -133,3 +133,65 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: linear-gradient(45deg, #7bf064, #42aaf5);
 }
+
+/* alterar texto da exibição na listagem dos livro */
+table {
+    background-color: #72717f;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: var(--secondary-color);
+    text-align: center;
+}
+  
+/* personalizar caixinha de "Ordenar por" */
+#sort-by {
+    margin-top: 10px;
+    width: 15%;
+}
+  
+table,
+th,
+td {
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+}
+  
+/* alterar a barra de exibição dos livros (th)*/
+th {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+  
+tr:nth-child(even) {
+    background-color: --tertiary-color;
+}
+  
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.edit-button,
+.delete-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+  
+.delete-button {
+    background-color: #f44336;
+}
+  
+#book-list-container,
+h2.listagem,
+p {
+    display: none;
+}
