@@ -107,4 +107,28 @@ document.addEventListener('DOMContentLoaded', function() {
             bookListBody.appendChild(row);
         });
     }
-    
+
+    // Função para editar um livro
+    function editBook(index) {
+        const book = books[index];
+        const titleInput = document.getElementById('title');
+        const authorInput = document.getElementById('author');
+        const publicationDateInput = document.getElementById('publication-date');
+
+        // Preenche os campos do formulário com os dados do livro selecionado para edição
+        titleInput.value = book.title;
+        authorInput.value = book.author;
+        publicationDateInput.value = book.publicationDate;
+
+        // Remove o livro do array e renderiza a lista de livros novamente
+        books.splice(index, 1);
+        renderBookList();
+    }
+
+    // Função para remover um livro
+    function deleteBook(index) {
+        // Remove o livro do array e renderiza a lista de livros novamente
+        books.splice(index, 1);
+        renderBookList();
+    }
+});
