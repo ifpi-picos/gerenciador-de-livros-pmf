@@ -78,3 +78,18 @@ function registerBooks() {
           console.log("---");
         }
       }
+
+      function removeBook(library) {
+        console.log("********* REMOVER LIVRO **********");
+        const titulo = prompt("Digite o titulo do livro que ele deseja remover:");
+        const index = library.findIndex((livro) => livro.title === titulo);
+      
+        if (index === -1) {
+          console.log(`Não há livros com esse título!`);
+          return;
+        }
+      
+        library.splice(index, 1);
+        saveBookStore(library);
+        console.log("********* LIVRO REMOVIDO ********");
+      }
