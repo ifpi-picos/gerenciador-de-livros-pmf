@@ -29,3 +29,33 @@ function cadastrarLivro() {
   console.log('Livro cadastrado com sucesso!');
   console.log('================================\n');
 }
+
+// Função para exibir e organizar a listagem dos livros
+function listarLivros() {
+  if (biblioteca.length === 0) {
+    console.log('A biblioteca está vazia.');
+    return;
+  } 
+
+  const ordenacao = prompt('Ordenar por título (T) ou por data de publicação (D)?');
+
+  let livrosOrdenados; // Fazer a ordenação dos livros
+  if (ordenacao.toUpperCase() === 'T') {
+    livrosOrdenados = biblioteca.slice().sort((a, b) => a.titulo.localeCompare(b.titulo));
+  } else if (ordenacao.toUpperCase() === 'D') {
+    livrosOrdenados = biblioteca.slice().sort((a, b) => new Date(a.data) - new Date(b.data));
+  } else {
+    console.log('Opção inválida.');
+    return;
+  }
+
+  // Exibir os livros ordenados
+  console.log('======== Livros na biblioteca =======');
+  for (const livro of livrosOrdenados) {
+    console.log(`Título: ${livro.titulo}`);
+    console.log(`Autor: ${livro.autor}`);
+    console.log(`Data de publicação: ${livro.data}`);
+    console.log('---');
+  }
+}
+
