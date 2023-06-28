@@ -44,3 +44,37 @@ function registerBooks() {
       return [];
     }
     }
+
+    function listBooks() {
+        const library = loadBookStore();
+        if (library.length === 0) {
+          console.log("A biblioteca está vazia.");
+          return;
+        }
+      
+        const ordination = prompt(
+          "Ordenar por título (T) ou por data de publicação (D)?"
+        );
+      
+        let booksOrdained;
+        if (ordination.toUpperCase() === "T") {
+          booksOrdained = library
+            .slice()
+            .sort((a, b) => a.dateFormat.localeCompare(b.dateFormat));
+        } else if (ordination.toUpperCase() === "D") {
+          booksOrdained = library
+            .slice()
+            .sort((a, b) => new Date(a.dateFormat) - new Date(b.dateFormat));
+        } else {
+          console.log("Opção inválida.");
+          return;
+        }
+      
+        console.log("******** Livros na biblioteca *********");
+        for (const book of booksOrdained) {
+          console.log(`Título: ${book.title}`);
+          console.log(`Autor: ${book.author}`);
+          console.log(`Data de publicação: ${book.dateFormat}`);
+          console.log("---");
+        }
+      }
