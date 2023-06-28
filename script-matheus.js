@@ -136,3 +136,40 @@ function carregarBiblioteca() {
     }
   }
 }
+
+// Função que inicia todo o funcionamento do programa
+function iniciar() {
+  carregarBiblioteca();
+
+  let executando = true; // Funcionará enquanto o usuário realizar suas operações
+  while (executando) {
+    exibirMenu();
+    const opcao = prompt('Digite uma opção:');
+    console.log();
+
+    switch (opcao) {
+      case '1':
+        cadastrarLivro();
+        break;
+      case '2':
+        listarLivros();
+        break;
+      case '3':
+        removerLivro();
+        break;
+      case '4':
+        alterarDetalhesLivro();
+        break;
+      case '5':
+        executando = false;
+        break;
+      default:
+        console.log('Opção inválida.');
+        break;
+    }
+
+    console.log();
+  }
+}
+
+iniciar();
