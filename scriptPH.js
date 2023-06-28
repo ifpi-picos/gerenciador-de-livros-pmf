@@ -19,4 +19,28 @@ function registerBooks() {
   let book = { title, author, dateFormat };
 
   library.push(book);
+  saveBookStore(library);
 }
+
+    function saveBookStore(library) {
+    const jSonLibrary = JSON.stringify(library);
+    const libraryPath = "libraryPath.txt";
+  
+    fs.writeFileSync(libraryPath, jSonLibrary, "utf8", (err) => {
+      if (err) {
+        console.log(`Erro ao salvar o arquivo: ${err}`);
+      } else {
+        console.log(`Biblioteca salva com sucesso!`);
+      }
+    });
+    }
+
+    function loadBookStore() {
+    try {
+      const data = JSON.parse(fs.readFileSync("libraryPath.txt"));
+      return data;
+    } catch (erro) {
+      console.log(`Não há itens cadatrados!`);
+      return [];
+    }
+    }
