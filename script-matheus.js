@@ -13,3 +13,19 @@ function exibirMenu() {
   console.log('5. Sair');
   console.log('===========================\n');
 }
+
+// Função para cadastrar um livro 
+function cadastrarLivro() {
+  console.log('======== Cadastro de Livro =======');
+  const titulo = prompt('Digite o título do livro:');
+  const autor = prompt('Digite o autor do livro:');
+  const data = prompt('Digite a data de publicação do livro (formato: DD/MM/AAAA):');
+
+  const livro = { titulo, autor, data };
+  biblioteca.push(livro);
+
+  salvarBiblioteca();
+
+  console.log('Livro cadastrado com sucesso!');
+  console.log('================================\n');
+}
