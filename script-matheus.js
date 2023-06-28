@@ -114,3 +114,25 @@ function alterarDetalhesLivro() {
   console.log('\nDetalhes do livro alterados com sucesso!');
   console.log('=========================================\n');
 }
+
+// Função para salvar os livros em um arquivo .txt
+function salvarBiblioteca() {
+  const conteudo = biblioteca.map(livro => `${livro.titulo};${livro.autor};${livro.data}`).join('\n');
+  fs.writeFileSync('livros.txt', conteudo);
+}
+
+// Função para carregar os livros que foram salvos no arquivo .txt
+function carregarBiblioteca() {
+  if (fs.existsSync('livros.txt')) {
+    const conteudo = fs.readFileSync('livros.txt', 'utf-8');
+    const linhas = conteudo.split('\n');
+
+    for (const linha of linhas) {
+      if (linha.trim() === '') {
+    continue;
+  }
+      const [titulo, autor, data] = linha.split(';');
+      biblioteca.push({ titulo, autor, data });
+    }
+  }
+}
