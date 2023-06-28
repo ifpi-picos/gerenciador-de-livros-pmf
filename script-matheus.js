@@ -76,3 +76,41 @@ function removerLivro() {
   console.log('Livro removido com sucesso!');
   console.log('=================================\n');
 }
+
+// Função para alterar os detalhes de um livro já cadastrado
+function alterarDetalhesLivro() {
+  console.log('======== Alteração de Detalhes do Livro =======');
+  const titulo = prompt('Digite o título do livro que deseja alterar:');
+  const index = biblioteca.findIndex(livro => livro.titulo === titulo);
+
+  if (index === -1) {
+    console.log('Livro não encontrado na biblioteca.');
+    return;
+  }
+
+  const livro = biblioteca[index];
+
+  console.log('\nDigite o novo título do livro (ou deixe em branco para manter o título atual):');
+  let novoTitulo = prompt('Escreva aqui:');
+  console.log('\nDigite o novo autor do livro (ou deixe em branco para manter o autor atual):');
+  let novoAutor = prompt('Escreva aqui:');
+  console.log('\nDigite a nova data de publicação do livro (formato: DD/MM/AAAA) (ou deixe em branco para manter a data atual):');
+  let novaData = prompt('Escreva aqui:');
+
+  if (novoTitulo.trim() !== '') {
+    livro.titulo = novoTitulo;
+  }
+
+  if (novoAutor.trim() !== '') {
+    livro.autor = novoAutor;
+  }
+
+  if (novaData.trim() !== '') {
+    livro.data = novaData;
+  }
+
+  salvarBiblioteca();
+
+  console.log('\nDetalhes do livro alterados com sucesso!');
+  console.log('=========================================\n');
+}
