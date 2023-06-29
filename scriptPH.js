@@ -1,10 +1,14 @@
-const prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")(); // Importa o módulo prompt-sync para entrada de dados no console de forma síncrona
 
-const fs = require("fs");
+const fs = require("fs"); // Importa o módulo fs para operações de leitura e escrita de arquivos
 
-let library = []
+let library = []; // Declara uma variável para armazenar os livros cadastrados
+
+// Função para cadastrar livros
 function registerBooks() {
-  library = loadBookStore();
+
+  library = loadBookStore(); // Carrega a biblioteca existente
+
   console.log(`******* Cadastro de Livro *******`);
   let title = prompt("Digite o título da obra:");
   let author = prompt("Digite o autor da obra:");
@@ -18,13 +22,16 @@ function registerBooks() {
 
   let book = { title, author, dateFormat };
 
-  library.push(book);
-  saveBookStore(library);
-}
+  library.push(book); // Adiciona o livro à biblioteca
 
+  saveBookStore(library); // Salva a biblioteca atualizada
+}
+    // Função para salvar a biblioteca em um arquivo
     function saveBookStore(library) {
-    const jSonLibrary = JSON.stringify(library);
-    const libraryPath = "libraryPath.txt";
+
+    const jSonLibrary = JSON.stringify(library); // Converte a biblioteca para JSON
+
+    const libraryPath = "libraryPath.txt"; // Define o caminho do arquivo de biblioteca
   
     fs.writeFileSync(libraryPath, jSonLibrary, "utf8", (err) => {
       if (err) {
@@ -33,20 +40,22 @@ function registerBooks() {
         console.log(`Biblioteca salva com sucesso!`);
       }
     });
-    }
-
+  }
+    // Função para carregar a biblioteca do arquivo
     function loadBookStore() {
     try {
-      const data = JSON.parse(fs.readFileSync("libraryPath.txt"));
-      return data;
+      const data = JSON.parse(fs.readFileSync("libraryPath.txt")); // Lê os dados do arquivo e converte de JSON para objeto
+      return data; // Retorna os dados da biblioteca
     } catch (erro) {
       console.log(`Não há itens cadatrados!`);
-      return [];
+      return []; // Retorna uma matriz vazia se ocorrer algum erro ou o arquivo não existir
     }
     }
 
+    // Função para listar os livros da biblioteca
     function listBooks() {
-        const library = loadBookStore();
+        const library = loadBookStore(); // Carrega a biblioteca existente
+
         if (library.length === 0) {
           console.log("A biblioteca está vazia.");
           return;
@@ -60,11 +69,11 @@ function registerBooks() {
         if (ordination.toUpperCase() === "T") {
           booksOrdained = library
             .slice()
-            .sort((a, b) => a.dateFormat.localeCompare(b.dateFormat));
+            .sort((a, b) => a.dateFormat.localeCompare(b.dateFormat)); // Ordena por título
         } else if (ordination.toUpperCase() === "D") {
           booksOrdained = library
             .slice()
-            .sort((a, b) => new Date(a.dateFormat) - new Date(b.dateFormat));
+            .sort((a, b) => new Date(a.dateFormat) - new Date(b.dateFormat)); // Ordena por data de publicação
         } else {
           console.log("Opção inválida.");
           return;
@@ -78,7 +87,8 @@ function registerBooks() {
           console.log("---");
         }
       }
-
+      
+      // Função para remover um livro da biblioteca
       function removeBook(library) {
         console.log("********* REMOVER LIVRO **********");
         const titulo = prompt("Digite o titulo do livro que ele deseja remover:");
@@ -89,11 +99,12 @@ function registerBooks() {
           return;
         }
       
-        library.splice(index, 1);
-        saveBookStore(library);
+        library.splice(index, 1); // Remove o livro da biblioteca
+        saveBookStore(library); // Salva a biblioteca atualizada
         console.log("********* LIVRO REMOVIDO ********");
       }
 
+      // Função para exibir o menu de opções
       function menu() {
         console.log(`******** GERENCIADOR DE LIVROS ********`);
         console.log(`(A) Cadatrar Livro`);
@@ -130,4 +141,4 @@ function registerBooks() {
         } while (operate);
       }
 
-      openLibrary()
+      openLibrary(); // Executa o programa chamando a função openLibrary()
