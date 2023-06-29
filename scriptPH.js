@@ -93,3 +93,41 @@ function registerBooks() {
         saveBookStore(library);
         console.log("********* LIVRO REMOVIDO ********");
       }
+
+      function menu() {
+        console.log(`******** GERENCIADOR DE LIVROS ********`);
+        console.log(`(A) Cadatrar Livro`);
+        console.log(`(B) Remover Livro`);
+        console.log(`(C) Listar Livros`);
+        console.log(`(D) Sair`);
+        console.log(`***************************************`);
+      }
+
+      function openLibrary() {
+        let operate = true;
+        do {
+          menu();
+          let option = prompt("Digite uma opção:");
+      
+          switch (option.toUpperCase()) {
+            case "A":
+              registerBooks();
+              break;
+            case "B":
+              removeBook(library);
+              break;
+            case "C":
+              listBooks();
+              break;
+            case "D":
+              operate = false;
+              console.log(`Obrigado,volte sempre!`);
+              break;
+            default:
+              console.log(`Digite uma opção válida!`);
+              break;
+          }
+        } while (operate);
+      }
+
+      openLibrary()
