@@ -9,3 +9,7 @@ Requisitos e funcionalidades do projeto:
 - Cada livro cadastrado deve ter: título, autor, data de publicação.
 - O aplicativo deve permitir a listagem de livros ordenados por título ou data de publicação.
 - O aplicativo deve permitir que o usuário altere ou remova um livro cadastrado.
+
+O projeto ficará dividido e hospedado da seguinte forma:
+- O projeto com interface Web feito em conjunto pela equipe e o link para testá-lo online (HTML, CSS e JavaScript);
+- Os arquivos de JavaScript puro, sem interface web, de cada um dos integrantes também ficarão aqui, uma vez que o projeto original da disciplina era apenas fornecer o JS sem interface.
