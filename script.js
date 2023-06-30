@@ -117,28 +117,20 @@ function editarLivro(book) {
   saveLocalStorage();
 }
 
-  // Função para editar um livro
-  function editBook(index) {
-    const book = library[index];
-    const titleInput = document.getElementById("title");
-    const authorInput = document.getElementById("author");
-    const publicationDateInput = document.getElementById("publication-date");
+// Função para excluir um livro
+function excluirLivro(book) {
+  // Remover o livro da lista
+  library = library.filter((item) => item !== book);
 
-    // Preenche os campos do formulário com os dados do livro selecionado para edição
-    titleInput.value = book.title;
-    authorInput.value = book.author;
-    publicationDateInput.value = book.publicationDate;
+  // Atualizar a lista de livros
+  atualizarListaLivros();
 
-    // Remove o livro do array e renderiza a lista de livros novamente
-    library.splice(index, 1);
-    renderBookList();
-  }
+  // Salvar os livros no Local Storage
+  saveLocalStorage();
+}
 
-  // Função para remover um livro
-  function deleteBook(index) {
-    // Remove o livro do array e renderiza a lista de livros novamente
-    library.splice(index, 1);
-    renderBookList();
-  }
-;
+// Adicionar o evento de submit ao formulário
+bookForm.addEventListener('submit', cadastrarLivro);
 
+// Carregar os livros do Local Storage ao carregar a página
+loadLocalStorage();
