@@ -113,51 +113,48 @@ input[type="submit"] {
     margin: 0 auto;
 }
     
-/* personalizar "Listagem de Livros" */
+/* Personalizar "Listagem de Livros" */
 .listagem {
-    background-color: #b475db;
+    background-color: #37393A;
     text-align: center;
-    margin-top: 80px;
     color: var(--secondary-color);
+    font-size: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     width: 20%;
-    position: relative;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-    
-form {
-    margin-bottom: 20px;
-}
-    
-.form-container {
-    background-color: #A9907E;
-    border: 3px solid #7bf064;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: inline-block;
     margin: 0 auto;
 }
 
-/*título, autor e data (nomes para alteração)*/
-label {
+/* Alterar o bloco da listagem */
+.list-container{
+    background-color: #8b7565;
+    border: 3px solid #37393A;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    align-items: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: bold;
-    color: var(--secondary-color);
 }
-  
-/* alterar a cor do botão quando o cursor passa por cima dele */
-input[type="submit"]:hover {
-    background: linear-gradient(45deg, #7bf064, #42aaf5);
+
+/* Personalizar caixinha de "Ordenar por" */
+#sort-by {
+    width: 20%;
+    margin-left: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #37393A;
+    padding: 10px;
 }
 
 /* alterar texto da exibição na listagem dos livro */
@@ -165,35 +162,21 @@ table {
     background-color: #72717f;
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
     color: var(--secondary-color);
     text-align: center;
-}
-  
-/* personalizar caixinha de "Ordenar por" */
-#sort-by {
-    margin-top: 10px;
-    width: 15%;
-}
-  
-table,
-th,
-td {
-    border: 1px solid var(--primary-color);
-    padding: 8px;
 }
   
 /* alterar a barra de exibição dos livros (th)*/
 th {
     background-color: var(--secondary-color);
-    color: var(--primary-color);
+    color: #37393A;
     font-weight: bold;
 }
   
 tr:nth-child(even) {
-    background-color: --tertiary-color;
+    background-color: #72717f;
 }
-  
+
 .action-buttons {
     display: flex;
     justify-content: center;
@@ -214,10 +197,4 @@ tr:nth-child(even) {
   
 .delete-button {
     background-color: #f44336;
-}
-  
-#book-list-container,
-h2.listagem,
-p {
-    display: none;
 }
