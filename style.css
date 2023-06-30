@@ -198,3 +198,19 @@ tr:nth-child(even) {
 .delete-button {
     background-color: #f44336;
 }
+
+#null{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #72717f;
+    border: 3px solid #37393A;
+    border-radius: 5px;
+    padding: 12px;
+    overflow: auto;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 90px;
+}
