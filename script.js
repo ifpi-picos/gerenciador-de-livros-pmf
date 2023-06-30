@@ -6,16 +6,16 @@ const publicationDateInput = document.getElementById('publication-date');
 const bookList = document.getElementById('book-list-body');
 const nullMessage = document.getElementById('null');
 
-  const library = []; // Array para armazenar os livros
+const library = []; // Array para armazenar os livros
 
-  // Evento de envio do formulário
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+// Função para cadastrar um livro
+function cadastrarLivro(event) {
+  event.preventDefault();
 
-    // Obtém os valores dos campos de entrada
-    const titleInput = document.getElementById("title");
-    const authorInput = document.getElementById("author");
-    const publicationDateInput = document.getElementById("publication-date");
+  // Obter os valores dos campos de entrada
+  const title = titleInput.value;
+  const author = authorInput.value;
+  const publicationDate = publicationDateInput.value;  
 
     // Cria um novo objeto de livro com os valores dos campos de entrada
     const newBook = {
@@ -36,7 +36,7 @@ const nullMessage = document.getElementById('null');
     renderBookList();
     localStorage.setItem("books", JSON.stringify(library));
     form.reset();
-  });
+  };
 
   // Evento de alteração da opção de classificação
   sortBySelect.addEventListener("change", function () {
