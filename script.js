@@ -1,8 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Obtém referências aos elementos do DOM
-  const form = document.getElementById("book-form"); // Formulário para adicionar novos livros
-  const bookListContainer = document.getElementById("book-list-container"); // Container da lista de livros
-  const sortBySelect = document.getElementById("sort-by"); // Selecionar opção de classificação
+// Capturar elementos do formulário e da lista de livros
+const bookForm = document.getElementById('book-form');
+const titleInput = document.getElementById('title');
+const authorInput = document.getElementById('author');
+const publicationDateInput = document.getElementById('publication-date');
+const bookList = document.getElementById('book-list-body');
+const nullMessage = document.getElementById('null');
 
   const library = []; // Array para armazenar os livros
 
@@ -134,4 +136,5 @@ document.addEventListener("DOMContentLoaded", function () {
     library.splice(index, 1);
     renderBookList();
   }
-});
+;
+
