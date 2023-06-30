@@ -86,12 +86,19 @@ function atualizarListaLivros() {
   });
 }
 
-  // Função para exibir os elementos da lista de livros
-  function showBookListElements() {
-    bookListContainer.style.display = "block"; // Exibe o container da lista de livros
-    document.querySelector("h2.listagem").style.display = "block"; // Exibe o título da lista
-    document.querySelector("p").style.display = "block"; // Exibe a mensagem de instrução
+// Função para armazenar dados no Local Storage
+function saveLocalStorage() {
+  localStorage.setItem('library', JSON.stringify(library));
+}
+
+// Função para carregar dados do Local Storage
+function loadLocalStorage() {
+  const savedLibrary = localStorage.getItem('library');
+  if (savedLibrary) {
+    library = JSON.parse(savedLibrary);
+    atualizarListaLivros();
   }
+}
 
   // Função para renderizar a lista de livros
   function renderBookList() {
