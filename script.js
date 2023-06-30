@@ -100,68 +100,22 @@ function loadLocalStorage() {
   }
 }
 
-  // Função para renderizar a lista de livros
-  function renderBookList() {
-    const sortBy = sortBySelect.value; // Obtém a opção de classificação selecionada
-    let sortedBooks = [...library]; // Cria uma cópia do array de livros
+// Função para editar um livro
+function editarLivro(book) {
+  // Preencher os campos de entrada com os valores do livro selecionado
+  titleInput.value = book.title;
+  authorInput.value = book.author;
+  publicationDateInput.value = book.publicationDate;
 
-    // Ordena os livros com base na opção de classificação selecionada
-    if (sortBy === "title") {
-      sortedBooks.sort((a, b) => a.title.localeCompare(b.title));
-    } else if (sortBy === "publication-date") {
-      sortedBooks.sort(
-        (a, b) => new Date(a.publicationDate) - new Date(b.publicationDate)
-      );
-    }
+  // Remover o livro da lista
+  library = library.filter((item) => item !== book);
 
-    const bookListBody = document.getElementById("book-list-body");
-    bookListBody.innerHTML = "";
+  // Atualizar a lista de livros
+  atualizarListaLivros();
 
-    // Itera sobre os livros ordenados e cria as células da tabela
-    sortedBooks.forEach(function (book, index) {
-      const row = document.createElement("tr");
-      const titleCell = document.createElement("td");
-      const authorCell = document.createElement("td");
-      const publicationDateCell = document.createElement("td");
-      const actionCell = document.createElement("td");
-      const editButton = document.createElement("button");
-      const deleteButton = document.createElement("button");
-
-      // Preenche as células com os dados do livro
-      titleCell.textContent = book.title;
-      authorCell.textContent = book.author;
-      publicationDateCell.textContent = book.publicationDate;
-      editButton.textContent = "Editar";
-      deleteButton.textContent = "Remover";
-
-      // Adiciona classes aos botões para estilização
-      editButton.classList.add("edit-button");
-      deleteButton.classList.add("delete-button");
-
-      // Evento de clique para editar o livro
-      editButton.addEventListener("click", function () {
-        editBook(index);
-      });
-
-      // Evento de clique para remover o livro
-      deleteButton.addEventListener("click", function () {
-        deleteBook(index);
-      });
-
-      // Adiciona os botões à célula de ação
-      actionCell.appendChild(editButton);
-      actionCell.appendChild(deleteButton);
-
-      // Adiciona as células à linha da tabela
-      row.appendChild(titleCell);
-      row.appendChild(authorCell);
-      row.appendChild(publicationDateCell);
-      row.appendChild(actionCell);
-
-      // Adiciona a linha à tabela
-      bookListBody.appendChild(row);
-    });
-  }
+  // Salvar os livros no Local Storage
+  saveLocalStorage();
+}
 
   // Função para editar um livro
   function editBook(index) {
