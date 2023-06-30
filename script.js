@@ -6,7 +6,8 @@ const publicationDateInput = document.getElementById('publication-date');
 const bookList = document.getElementById('book-list-body');
 const nullMessage = document.getElementById('null');
 
-const library = []; // Array para armazenar os livros
+// Array para armazenar os livros
+let library = [];
 
 // Função para cadastrar um livro
 function cadastrarLivro(event) {
@@ -122,10 +123,10 @@ function excluirLivro(book) {
   // Remover o livro da lista
   library = library.filter((item) => item !== book);
 
-  // Atualizar a lista de livros
+  
   atualizarListaLivros();
 
-  // Salvar os livros no Local Storage
+  
   saveLocalStorage();
 }
 
