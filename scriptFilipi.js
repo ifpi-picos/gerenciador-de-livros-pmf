@@ -44,3 +44,20 @@ function listarLivros() {
       console.log('---');
     }
   }
+  function removerLivro() {
+    console.log('======= Remover Livro =======');
+    let titulo = prompt('Digite o título do livro que deseja remover: ');
+  
+    const livroIndex = biblioteca.findIndex(livro => livro.titulo === titulo);
+  
+    if (livroIndex === -1) {
+      console.log('Livro não encontrado na biblioteca.');
+      return;
+    }
+  
+    biblioteca.splice(livroIndex, 1);
+    salvarBiblioteca();
+  
+    console.log('Livro removido com sucesso!');
+    console.log('=============================\n');
+  }
