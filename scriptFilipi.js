@@ -61,3 +61,38 @@ function listarLivros() {
     console.log('Livro removido com sucesso!');
     console.log('=============================\n');
   }
+  function alterarDetalhesLivro() {
+    console.log('======= Alterar Detalhes do Livro =======');
+    const titulo = prompt('Digite o título do livro que deseja alterar: ');
+  
+    const livroIndex = biblioteca.findIndex(livro => livro.titulo === titulo);
+  
+    if (livroIndex === -1) {
+      console.log('Livro não encontrado na biblioteca.');
+      return;
+    }
+  
+    const livro = biblioteca[livroIndex];
+  
+    const novoTitulo = prompt('Digite o novo título do livro (ou deixe em branco para manter o título atual): ');
+    const novoAutor = prompt('Digite o novo autor do livro (ou deixe em branco para manter o autor atual): ');
+    const novaData = prompt('Digite a nova data de publicação do livro (formato: DD/MM/AAAA) (ou deixe em branco para manter a data atual): ');
+  
+    if (novoTitulo.trim() !== '') {
+      livro.titulo = novoTitulo;
+    }
+  
+    if (novoAutor.trim() !== '') {
+      livro.autor = novoAutor;
+    }
+  
+    if (novaData.trim() !== '') {
+      livro.data = novaData;
+    }
+  
+    salvarBiblioteca();
+  
+    console.log('Detalhes do livro alterados com sucesso!');
+    console.log('========================================\n');
+  }
+  
