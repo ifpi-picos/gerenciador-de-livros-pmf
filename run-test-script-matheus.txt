@@ -1,0 +1,177 @@
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 1
+
+//----- Cadastro de Livro -----//
+Insira o título do livro:> oi
+Insira o autor do livro:> eu
+Insira a data de publicação do livro:> 21/06/2003
+Livro cadastrado com sucesso!
+------------------------------
+
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 1
+
+//----- Cadastro de Livro -----//
+Insira o título do livro:> ele
+Insira o autor do livro:> ela
+Insira a data de publicação do livro:> 15/05/1987
+Livro cadastrado com sucesso!
+------------------------------
+
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 2
+
+Ordenar por título ou por data de publicação?
+Insira T ou D:> t
+
+//----- Livros na biblioteca -----//
+Título: ele
+Autor: ela
+Data de publicação: 15/05/1987
+---
+Título: oi
+Autor: eu
+Data de publicação: 21/06/2003
+---
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 2
+
+Ordenar por título ou por data de publicação?
+Insira T ou D:> d
+
+//----- Livros na biblioteca -----//
+Título: oi
+Autor: eu
+Data de publicação: 21/06/2003
+---
+Título: ele
+Autor: ela
+Data de publicação: 15/05/1987
+---
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 3
+
+//----- Alteração de Detalhes de um Livro -----//
+Digite o título do livro que deseja alterar:> oi
+
+Deixe em branco o que não quiser alterar
+
+Digite o novo título:
+Escreva aqui:> A Piada Mortal
+
+Digite o novo autor:
+Escreva aqui:> Alan Moore
+
+Digite a nova data de publicação no formato: DD/MM/AAAA:
+Escreva aqui:> 19/03/1989
+
+Detalhes do livro alterados com sucesso!
+-------------------------------------------
+
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 2
+
+Ordenar por título ou por data de publicação?
+Insira T ou D:> t
+
+//----- Livros na biblioteca -----//
+Título: A Piada Mortal
+Autor: Alan Moore
+Data de publicação: 19/03/1989
+---
+Título: ele
+Autor: ela
+Data de publicação: 15/05/1987
+---
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 4
+
+//----- Remoção de um Livro -----//
+Digite o título do livro que deseja remover:> ele
+Livro removido com sucesso!
+-------------------------------
+
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 2
+
+Ordenar por título ou por data de publicação?
+Insira T ou D:> t
+
+//----- Livros na biblioteca -----//
+Título: A Piada Mortal
+Autor: Alan Moore
+Data de publicação: 19/03/1989
+---
+
+//----- Gerenciador de livros -----//
+1 -> Cadastrar um livro
+2 -> Listar os livros cadastrados
+3 -> Alterar detalhes de um livro
+4 -> Remover um livro da Biblioteca
+5 -> Sair do programa
+-----------------------------------
+
+Insira a operação desejada:> 5
