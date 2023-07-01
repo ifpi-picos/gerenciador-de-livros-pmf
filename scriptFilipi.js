@@ -18,3 +18,29 @@ function cadastrarLivro() {
   console.log('Livro cadastrado com sucesso!');
   console.log('==================================\n');
 }
+function listarLivros() {
+    if (biblioteca.length === 0) {
+      console.log('A biblioteca está vazia.');
+      return;
+    }
+  
+    console.log('======= Livros na biblioteca =======');
+    
+    const ordenacao = prompt('Ordenar por título (T) ou por data de publicação (D)?').toUpperCase();
+  
+    if (ordenacao === 'T') {
+      biblioteca.sort((a, b) => a.titulo.localeCompare(b.titulo));
+    } else if (ordenacao === 'D') {
+      biblioteca.sort((a, b) => new Date(a.data) - new Date(b.data));
+    } else {
+      console.log('Opção inválida.');
+      return;
+    }
+  
+    for (const livro of biblioteca) {
+      console.log(`Título: ${livro.titulo}`);
+      console.log(`Autor: ${livro.autor}`);
+      console.log(`Data de publicação: ${livro.data}`);
+      console.log('---');
+    }
+  }
