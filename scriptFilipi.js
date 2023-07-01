@@ -99,7 +99,6 @@ function listarLivros() {
     const conteudo = biblioteca.map(livro => `${livro.titulo};${livro.autor};${livro.data}`).join('\n');
     fs.writeFileSync(filename, conteudo);
   }
-  
   function carregarBiblioteca() {
     if (fs.existsSync(filename)) {
       const conteudo = fs.readFileSync(filename, 'utf-8');
@@ -110,4 +109,5 @@ function listarLivros() {
         biblioteca.push({ titulo, autor, data });
       }
     }
-  }  
+  }
+  
