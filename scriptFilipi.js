@@ -136,4 +136,9 @@ function listarLivros() {
       console.log();
     }
   }
+  iniciar();
+
+console.log('Obrigado por utilizar o Gerenciador de Livros!');
+console.log('');
+
   
