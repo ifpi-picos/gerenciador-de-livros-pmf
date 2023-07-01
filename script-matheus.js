@@ -5,21 +5,21 @@ let biblioteca = []; // Armazenar os livros cadastrados.
 
 // Função para exibir o menu de opções do Gerenciador de livros
 function exibirMenu() {
-  console.log('======== Gerenciador de livros =======');
-  console.log('1. Cadastrar livro');
-  console.log('2. Listar livros');
-  console.log('3. Remover livro');
-  console.log('4. Alterar detalhes do livro');
-  console.log('5. Sair');
+  console.log('//====== Gerenciador de livros =====//');
+  console.log('1 - Cadastrar um livro');
+  console.log('2 - Listar os livros cadastrados');
+  console.log('3 - Remover um livro da Biblioteca');
+  console.log('4 - Alterar detalhes de um livro');
+  console.log('5 - Sair do programa');
   console.log('===========================\n');
 }
 
 // Função para cadastrar um livro 
 function cadastrarLivro() {
-  console.log('======== Cadastro de Livro =======');
-  const titulo = prompt('Digite o título do livro:');
-  const autor = prompt('Digite o autor do livro:');
-  const data = prompt('Digite a data de publicação do livro (formato: DD/MM/AAAA):');
+  console.log('//====== Cadastro de Livro =====//');
+  const titulo = prompt('Insira o título do livro:');
+  const autor = prompt('Insira o autor do livro:');
+  const data = prompt('Insira a data de publicação do livro:');
 
   const livro = { titulo, autor, data };
   biblioteca.push(livro);
@@ -33,24 +33,29 @@ function cadastrarLivro() {
 // Função para exibir e organizar a listagem dos livros
 function listarLivros() {
   if (biblioteca.length === 0) {
-    console.log('A biblioteca está vazia.');
+    console.log('Não há livros na biblioteca.');
     return;
   } 
 
-  const ordenacao = prompt('Ordenar por título (T) ou por data de publicação (D)?');
+  console.log('Ordenar por título ou por data de publicação?')
+  const ordenacao = prompt('Insira T ou D:');
 
   let livrosOrdenados; // Fazer a ordenação dos livros
   if (ordenacao.toUpperCase() === 'T') {
     livrosOrdenados = biblioteca.slice().sort((a, b) => a.titulo.localeCompare(b.titulo));
   } else if (ordenacao.toUpperCase() === 'D') {
-    livrosOrdenados = biblioteca.slice().sort((a, b) => new Date(a.data) - new Date(b.data));
+    livrosOrdenados = biblioteca.slice().sort((a, b) => {
+      const dataA = new Date(a.data.split('/').reverse().join('-'));
+      const dataB = new Date(b.data.split('/').reverse().join('-'));
+      return dataB - dataA;
+    }); 
   } else {
     console.log('Opção inválida.');
     return;
   }
 
   // Exibir os livros ordenados
-  console.log('======== Livros na biblioteca =======');
+  console.log('\n//====== Livros na biblioteca =====//');
   for (const livro of livrosOrdenados) {
     console.log(`Título: ${livro.titulo}`);
     console.log(`Autor: ${livro.autor}`);
@@ -61,12 +66,12 @@ function listarLivros() {
 
 // Função para remover um livro
 function removerLivro() {
-  console.log('======== Remoção de Livro =======');
+  console.log('//====== Remover um Livro =====//');
   const titulo = prompt('Digite o título do livro que deseja remover:');
   const index = biblioteca.findIndex(livro => livro.titulo === titulo);
 
   if (index === -1) {
-    console.log('Livro não encontrado na biblioteca.');
+    console.log('Livro não encontrado.');
     return;
   }
 
@@ -79,12 +84,12 @@ function removerLivro() {
 
 // Função para alterar os detalhes de um livro já cadastrado
 function alterarDetalhesLivro() {
-  console.log('======== Alteração de Detalhes do Livro =======');
+  console.log('//====== Alteração de Detalhes de um Livro =====//');
   const titulo = prompt('Digite o título do livro que deseja alterar:');
   const index = biblioteca.findIndex(livro => livro.titulo === titulo);
 
   if (index === -1) {
-    console.log('Livro não encontrado na biblioteca.');
+    console.log('Livro não encontrado.');
     return;
   }
 
@@ -144,7 +149,7 @@ function iniciar() {
   let executando = true; // Funcionará enquanto o usuário realizar suas operações
   while (executando) {
     exibirMenu();
-    const opcao = prompt('Digite uma opção:');
+    const opcao = prompt('Insira a opção desejada:');
     console.log();
 
     switch (opcao) {
