@@ -110,5 +110,30 @@ function listarLivros() {
       }
     }
   }
+  function iniciar() {
+    carregarBiblioteca();
   
+    let executando = true;
+    while (executando) {
+      Menu();
+      const opcao = prompt('Digite uma opção: ');
+      console.log();
+  
+      if (opcao === '1') {
+        cadastrarLivro();
+      } else if (opcao === '2') {
+        listarLivros();
+      } else if (opcao === '3') {
+        removerLivro();
+      } else if (opcao === '4') {
+        alterarDetalhesLivro();
+      } else if (opcao === '5') {
+        executando = false;
+      } else {
+        console.log('Opção inválida.');
+      }
+  
+      console.log();
+    }
+  }
   
