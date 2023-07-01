@@ -38,12 +38,12 @@ function listagem() {
   } 
 
   console.log('Ordenar por título ou por data de publicação?')
-  const organizados = prompt('Insira T ou D:');
+  const organizados = prompt('Insira: titulo ou data:');
 
   let bibliotecaOrganizada; // Fazer a ordenação dos livros
-  if (organizados.toUpperCase() === 'T') {
+  if (organizados.toUpperCase() === 'TITULO') {
     bibliotecaOrganizada = biblioteca.slice().sort((a, b) => a.titulo.localeCompare(b.titulo));
-  } else if (organizados.toUpperCase() === 'D') {
+  } else if (organizados.toUpperCase() === 'DATA') {
     bibliotecaOrganizada = biblioteca.slice().sort((a, b) => {
       const dataA = new Date(a.data.split('/').reverse().join('-'));
       const dataB = new Date(b.data.split('/').reverse().join('-'));
