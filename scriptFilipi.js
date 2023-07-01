@@ -95,4 +95,19 @@ function listarLivros() {
     console.log('Detalhes do livro alterados com sucesso!');
     console.log('========================================\n');
   }
+  function salvarBiblioteca() {
+    const conteudo = biblioteca.map(livro => `${livro.titulo};${livro.autor};${livro.data}`).join('\n');
+    fs.writeFileSync(filename, conteudo);
+  }
   
+  function carregarBiblioteca() {
+    if (fs.existsSync(filename)) {
+      const conteudo = fs.readFileSync(filename, 'utf-8');
+      const linhas = conteudo.split('\n');
+  
+      for (const linha of linhas) {
+        const [titulo, autor, data] = linha.split(';');
+        biblioteca.push({ titulo, autor, data });
+      }
+    }
+  }  
