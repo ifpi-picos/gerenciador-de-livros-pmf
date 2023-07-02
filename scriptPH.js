@@ -170,7 +170,7 @@ function editBook() {
     livro.dateFormat = newDate;
   }
 
-  saveBookStore();
+  saveBookStore(library);
   console.log(`******* Livro editado com sucesso! *******`);
 }
 openLibrary(); // Executa o programa chamando a função openLibrary()
